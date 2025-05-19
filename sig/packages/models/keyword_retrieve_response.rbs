@@ -1,0 +1,32 @@
+module Packages
+  module Models
+    type keyword_retrieve_response =
+      {
+        name: String,
+        packages: ::Array[Packages::Registries::Package],
+        packages_count: Integer,
+        packages_url: String,
+        related_keywords: ::Array[Packages::Keyword]
+      }
+
+    class KeywordRetrieveResponse < Packages::Internal::Type::BaseModel
+      attr_accessor name: String
+
+      attr_accessor packages: ::Array[Packages::Registries::Package]
+
+      attr_accessor packages_count: Integer
+
+      attr_accessor packages_url: String
+
+      attr_accessor related_keywords: ::Array[Packages::Keyword]
+
+      def initialize: (
+        name: String,
+        packages: ::Array[Packages::Registries::Package],
+        packages_count: Integer,
+        packages_url: String,
+        related_keywords: ::Array[Packages::Keyword]
+      ) -> void
+    end
+  end
+end

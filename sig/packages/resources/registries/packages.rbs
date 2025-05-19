@@ -1,0 +1,70 @@
+module Packages
+  module Resources
+    class Registries
+      class Packages
+        attr_reader versions: Packages::Resources::Registries::Packages::Versions
+
+        def retrieve: (
+          String package_name,
+          registry_name: String,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Registries::Package
+
+        def list: (
+          String registry_name,
+          ?created_after: Time,
+          ?created_before: Time,
+          ?critical: bool,
+          ?order: String,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?sort: String,
+          ?updated_after: Time,
+          ?updated_before: Time,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::package_list_response
+
+        def list_dependent_package_kinds: (
+          String package_name,
+          registry_name: String,
+          ?latest: bool,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::package_list_dependent_package_kinds_response
+
+        def list_dependent_packages: (
+          String package_name,
+          registry_name: String,
+          ?created_after: Time,
+          ?kind: String,
+          ?latest: bool,
+          ?order: String,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?sort: String,
+          ?updated_after: Time,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::package_list_dependent_packages_response
+
+        def list_related_packages: (
+          String package_name,
+          registry_name: String,
+          ?created_after: Time,
+          ?order: String,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?sort: String,
+          ?updated_after: Time,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::package_list_related_packages_response
+
+        def list_version_numbers: (
+          String package_name,
+          registry_name: String,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::package_list_version_numbers_response
+
+        def initialize: (client: Packages::Client) -> void
+      end
+    end
+  end
+end

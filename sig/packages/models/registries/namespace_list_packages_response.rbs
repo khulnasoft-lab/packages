@@ -1,0 +1,10 @@
+module Packages
+  module Models
+    module Registries
+      type namespace_list_packages_response =
+        ::Array[Packages::Registries::Package]
+
+      NamespaceListPackagesResponse: Packages::Internal::Type::Converter
+    end
+  end
+end

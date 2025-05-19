@@ -1,0 +1,85 @@
+module Packages
+  module Models
+    module Registries
+      module Packages
+        type version_list_params =
+          {
+            registry_name: String,
+            created_after: Time,
+            created_before: Time,
+            order: String,
+            page: Integer,
+            per_page: Integer,
+            published_after: Time,
+            published_before: Time,
+            sort: String,
+            updated_after: Time,
+            updated_before: Time
+          }
+          & Packages::Internal::Type::request_parameters
+
+        class VersionListParams < Packages::Internal::Type::BaseModel
+          extend Packages::Internal::Type::RequestParameters::Converter
+          include Packages::Internal::Type::RequestParameters
+
+          attr_accessor registry_name: String
+
+          attr_reader created_after: Time?
+
+          def created_after=: (Time) -> Time
+
+          attr_reader created_before: Time?
+
+          def created_before=: (Time) -> Time
+
+          attr_reader order: String?
+
+          def order=: (String) -> String
+
+          attr_reader page: Integer?
+
+          def page=: (Integer) -> Integer
+
+          attr_reader per_page: Integer?
+
+          def per_page=: (Integer) -> Integer
+
+          attr_reader published_after: Time?
+
+          def published_after=: (Time) -> Time
+
+          attr_reader published_before: Time?
+
+          def published_before=: (Time) -> Time
+
+          attr_reader sort: String?
+
+          def sort=: (String) -> String
+
+          attr_reader updated_after: Time?
+
+          def updated_after=: (Time) -> Time
+
+          attr_reader updated_before: Time?
+
+          def updated_before=: (Time) -> Time
+
+          def initialize: (
+            registry_name: String,
+            ?created_after: Time,
+            ?created_before: Time,
+            ?order: String,
+            ?page: Integer,
+            ?per_page: Integer,
+            ?published_after: Time,
+            ?published_before: Time,
+            ?sort: String,
+            ?updated_after: Time,
+            ?updated_before: Time,
+            ?request_options: Packages::request_opts
+          ) -> void
+        end
+      end
+    end
+  end
+end

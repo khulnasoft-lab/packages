@@ -1,0 +1,34 @@
+module Packages
+  module Resources
+    class Registries
+      class Packages
+        class Versions
+          def retrieve: (
+            String version_number,
+            registry_name: String,
+            package_name: String,
+            ?request_options: Packages::request_opts
+          ) -> Packages::Models::Registries::Packages::VersionRetrieveResponse
+
+          def list: (
+            String package_name,
+            registry_name: String,
+            ?created_after: Time,
+            ?created_before: Time,
+            ?order: String,
+            ?page: Integer,
+            ?per_page: Integer,
+            ?published_after: Time,
+            ?published_before: Time,
+            ?sort: String,
+            ?updated_after: Time,
+            ?updated_before: Time,
+            ?request_options: Packages::request_opts
+          ) -> Packages::Models::Registries::Packages::version_list_response
+
+          def initialize: (client: Packages::Client) -> void
+        end
+      end
+    end
+  end
+end

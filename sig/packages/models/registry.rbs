@@ -1,0 +1,86 @@
+module Packages
+  module Models
+    type registry =
+      {
+        created_at: Time,
+        default: bool,
+        downloads: Integer,
+        ecosystem: String,
+        github: String?,
+        icon_url: String,
+        keywords_count: Integer,
+        maintainers_count: Integer,
+        maintainers_url: String,
+        metadata: top?,
+        name: String,
+        namespaces_count: Integer,
+        packages_count: Integer,
+        packages_url: String,
+        purl_type: String,
+        updated_at: Time,
+        url: String,
+        versions_count: Integer
+      }
+
+    class Registry < Packages::Internal::Type::BaseModel
+      attr_accessor created_at: Time
+
+      attr_accessor default: bool
+
+      attr_accessor downloads: Integer
+
+      attr_accessor ecosystem: String
+
+      attr_accessor github: String?
+
+      attr_accessor icon_url: String
+
+      attr_accessor keywords_count: Integer
+
+      attr_accessor maintainers_count: Integer
+
+      attr_accessor maintainers_url: String
+
+      attr_accessor metadata: top?
+
+      attr_accessor name: String
+
+      attr_accessor namespaces_count: Integer
+
+      attr_accessor packages_count: Integer
+
+      attr_accessor packages_url: String
+
+      attr_accessor purl_type: String
+
+      attr_accessor updated_at: Time
+
+      attr_accessor url: String
+
+      attr_reader versions_count: Integer?
+
+      def versions_count=: (Integer) -> Integer
+
+      def initialize: (
+        created_at: Time,
+        default: bool,
+        downloads: Integer,
+        ecosystem: String,
+        github: String?,
+        icon_url: String,
+        keywords_count: Integer,
+        maintainers_count: Integer,
+        maintainers_url: String,
+        metadata: top?,
+        name: String,
+        namespaces_count: Integer,
+        packages_count: Integer,
+        packages_url: String,
+        purl_type: String,
+        updated_at: Time,
+        url: String,
+        ?versions_count: Integer
+      ) -> void
+    end
+  end
+end

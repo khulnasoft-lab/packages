@@ -1,0 +1,26 @@
+module Packages
+  module Models
+    module Registries
+      type package_list_dependent_package_kinds_params =
+        { registry_name: String, latest: bool }
+        & Packages::Internal::Type::request_parameters
+
+      class PackageListDependentPackageKindsParams < Packages::Internal::Type::BaseModel
+        extend Packages::Internal::Type::RequestParameters::Converter
+        include Packages::Internal::Type::RequestParameters
+
+        attr_accessor registry_name: String
+
+        attr_reader latest: bool?
+
+        def latest=: (bool) -> bool
+
+        def initialize: (
+          registry_name: String,
+          ?latest: bool,
+          ?request_options: Packages::request_opts
+        ) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,36 @@
+module Packages
+  module Models
+    type dependency =
+      {
+        id: Integer,
+        ecosystem: String,
+        kind: String?,
+        optional: bool?,
+        package_name: String,
+        requirements: String?
+      }
+
+    class Dependency < Packages::Internal::Type::BaseModel
+      attr_accessor id: Integer
+
+      attr_accessor ecosystem: String
+
+      attr_accessor kind: String?
+
+      attr_accessor optional: bool?
+
+      attr_accessor package_name: String
+
+      attr_accessor requirements: String?
+
+      def initialize: (
+        id: Integer,
+        ecosystem: String,
+        kind: String?,
+        optional: bool?,
+        package_name: String,
+        requirements: String?
+      ) -> void
+    end
+  end
+end

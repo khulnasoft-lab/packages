@@ -1,0 +1,17 @@
+module Packages
+  module Resources
+    class Packages
+      def lookup: (
+        ?ecosystem: String,
+        ?name: String,
+        ?order: String,
+        ?purl: String,
+        ?repository_url: String,
+        ?sort: String,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::package_lookup_response
+
+      def initialize: (client: Packages::Client) -> void
+    end
+  end
+end

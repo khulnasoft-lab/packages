@@ -1,0 +1,71 @@
+module Packages
+  module Models
+    type dependency_list_params =
+      {
+        after: String,
+        ecosystem: String,
+        kind: String,
+        optional: bool,
+        package_id: String,
+        package_name: String,
+        page: Integer,
+        per_page: Integer,
+        requirements: String
+      }
+      & Packages::Internal::Type::request_parameters
+
+    class DependencyListParams < Packages::Internal::Type::BaseModel
+      extend Packages::Internal::Type::RequestParameters::Converter
+      include Packages::Internal::Type::RequestParameters
+
+      attr_reader after: String?
+
+      def after=: (String) -> String
+
+      attr_reader ecosystem: String?
+
+      def ecosystem=: (String) -> String
+
+      attr_reader kind: String?
+
+      def kind=: (String) -> String
+
+      attr_reader optional: bool?
+
+      def optional=: (bool) -> bool
+
+      attr_reader package_id: String?
+
+      def package_id=: (String) -> String
+
+      attr_reader package_name: String?
+
+      def package_name=: (String) -> String
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      attr_reader per_page: Integer?
+
+      def per_page=: (Integer) -> Integer
+
+      attr_reader requirements: String?
+
+      def requirements=: (String) -> String
+
+      def initialize: (
+        ?after: String,
+        ?ecosystem: String,
+        ?kind: String,
+        ?optional: bool,
+        ?package_id: String,
+        ?package_name: String,
+        ?page: Integer,
+        ?per_page: Integer,
+        ?requirements: String,
+        ?request_options: Packages::request_opts
+      ) -> void
+    end
+  end
+end

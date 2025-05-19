@@ -1,0 +1,53 @@
+module Packages
+  module Models
+    type registry_lookup_package_params =
+      {
+        ecosystem: String,
+        name: String,
+        order: String,
+        purl: String,
+        repository_url: String,
+        sort: String
+      }
+      & Packages::Internal::Type::request_parameters
+
+    class RegistryLookupPackageParams < Packages::Internal::Type::BaseModel
+      extend Packages::Internal::Type::RequestParameters::Converter
+      include Packages::Internal::Type::RequestParameters
+
+      attr_reader ecosystem: String?
+
+      def ecosystem=: (String) -> String
+
+      attr_reader name: String?
+
+      def name=: (String) -> String
+
+      attr_reader order: String?
+
+      def order=: (String) -> String
+
+      attr_reader purl: String?
+
+      def purl=: (String) -> String
+
+      attr_reader repository_url: String?
+
+      def repository_url=: (String) -> String
+
+      attr_reader sort: String?
+
+      def sort=: (String) -> String
+
+      def initialize: (
+        ?ecosystem: String,
+        ?name: String,
+        ?order: String,
+        ?purl: String,
+        ?repository_url: String,
+        ?sort: String,
+        ?request_options: Packages::request_opts
+      ) -> void
+    end
+  end
+end

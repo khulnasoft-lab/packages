@@ -1,0 +1,26 @@
+module Packages
+  module Models
+    type keyword_list_params =
+      { page: Integer, per_page: Integer }
+      & Packages::Internal::Type::request_parameters
+
+    class KeywordListParams < Packages::Internal::Type::BaseModel
+      extend Packages::Internal::Type::RequestParameters::Converter
+      include Packages::Internal::Type::RequestParameters
+
+      attr_reader page: Integer?
+
+      def page=: (Integer) -> Integer
+
+      attr_reader per_page: Integer?
+
+      def per_page=: (Integer) -> Integer
+
+      def initialize: (
+        ?page: Integer,
+        ?per_page: Integer,
+        ?request_options: Packages::request_opts
+      ) -> void
+    end
+  end
+end

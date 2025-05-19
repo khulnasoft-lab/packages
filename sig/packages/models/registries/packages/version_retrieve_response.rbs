@@ -1,0 +1,90 @@
+module Packages
+  module Models
+    module Registries
+      module Packages
+        type version_retrieve_response =
+          {
+            created_at: Time,
+            dependencies: ::Array[Packages::Dependency],
+            documentation_url: String?,
+            download_url: String?,
+            install_command: String?,
+            integrity: String?,
+            latest: bool,
+            licenses: String?,
+            metadata: top?,
+            number: String,
+            published_at: String?,
+            purl: String,
+            registry_url: String?,
+            related_tag: top,
+            status: String?,
+            updated_at: Time,
+            version_url: String,
+            id: Integer
+          }
+
+        class VersionRetrieveResponse < Packages::Internal::Type::BaseModel
+          attr_accessor created_at: Time
+
+          attr_accessor dependencies: ::Array[Packages::Dependency]
+
+          attr_accessor documentation_url: String?
+
+          attr_accessor download_url: String?
+
+          attr_accessor install_command: String?
+
+          attr_accessor integrity: String?
+
+          attr_accessor latest: bool
+
+          attr_accessor licenses: String?
+
+          attr_accessor metadata: top?
+
+          attr_accessor number: String
+
+          attr_accessor published_at: String?
+
+          attr_accessor purl: String
+
+          attr_accessor registry_url: String?
+
+          attr_accessor related_tag: top
+
+          attr_accessor status: String?
+
+          attr_accessor updated_at: Time
+
+          attr_accessor version_url: String
+
+          attr_reader id: Integer?
+
+          def id=: (Integer) -> Integer
+
+          def initialize: (
+            created_at: Time,
+            dependencies: ::Array[Packages::Dependency],
+            documentation_url: String?,
+            download_url: String?,
+            install_command: String?,
+            integrity: String?,
+            latest: bool,
+            licenses: String?,
+            metadata: top?,
+            number: String,
+            published_at: String?,
+            purl: String,
+            registry_url: String?,
+            related_tag: top,
+            status: String?,
+            updated_at: Time,
+            version_url: String,
+            ?id: Integer
+          ) -> void
+        end
+      end
+    end
+  end
+end

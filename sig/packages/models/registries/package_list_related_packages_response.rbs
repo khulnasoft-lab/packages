@@ -1,0 +1,10 @@
+module Packages
+  module Models
+    module Registries
+      type package_list_related_packages_response =
+        ::Array[Packages::Registries::Package]
+
+      PackageListRelatedPackagesResponse: Packages::Internal::Type::Converter
+    end
+  end
+end

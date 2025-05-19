@@ -1,0 +1,62 @@
+module Packages
+  module Models
+    module Registries
+      type maintainer =
+        {
+          created_at: Time,
+          email: String?,
+          html_url: String?,
+          login: String?,
+          name: String?,
+          packages_count: Integer,
+          packages_url: String,
+          role: String?,
+          total_downloads: Integer,
+          updated_at: Time,
+          url: String?,
+          uuid: String
+        }
+
+      class Maintainer < Packages::Internal::Type::BaseModel
+        attr_accessor created_at: Time
+
+        attr_accessor email: String?
+
+        attr_accessor html_url: String?
+
+        attr_accessor login: String?
+
+        attr_accessor name: String?
+
+        attr_accessor packages_count: Integer
+
+        attr_accessor packages_url: String
+
+        attr_accessor role: String?
+
+        attr_accessor total_downloads: Integer
+
+        attr_accessor updated_at: Time
+
+        attr_accessor url: String?
+
+        attr_accessor uuid: String
+
+        def initialize: (
+          created_at: Time,
+          email: String?,
+          html_url: String?,
+          login: String?,
+          name: String?,
+          packages_count: Integer,
+          packages_url: String,
+          role: String?,
+          total_downloads: Integer,
+          updated_at: Time,
+          url: String?,
+          uuid: String
+        ) -> void
+      end
+    end
+  end
+end

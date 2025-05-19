@@ -1,0 +1,13 @@
+module Packages
+  module Models
+    type package_with_registry = { registry: Packages::Registry }
+
+    class PackageWithRegistry < Packages::Models::Registries::Package
+      def registry: -> Packages::Registry
+
+      def registry=: (Packages::Registry _) -> Packages::Registry
+
+      def initialize: (registry: Packages::Registry) -> void
+    end
+  end
+end

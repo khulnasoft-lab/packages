@@ -1,0 +1,85 @@
+module Packages
+  module Models
+    type registry_list_recent_versions_response_item =
+      {
+        id: Integer,
+        created_at: Time,
+        documentation_url: String?,
+        download_url: String?,
+        install_command: String?,
+        integrity: String?,
+        latest: bool,
+        licenses: String?,
+        metadata: top?,
+        number: String,
+        package_url: String,
+        published_at: String?,
+        purl: String,
+        registry_url: String?,
+        status: String?,
+        updated_at: Time,
+        version_url: String
+      }
+
+    class RegistryListRecentVersionsResponseItem < Packages::Internal::Type::BaseModel
+      attr_accessor id: Integer
+
+      attr_accessor created_at: Time
+
+      attr_accessor documentation_url: String?
+
+      attr_accessor download_url: String?
+
+      attr_accessor install_command: String?
+
+      attr_accessor integrity: String?
+
+      attr_accessor latest: bool
+
+      attr_accessor licenses: String?
+
+      attr_accessor metadata: top?
+
+      attr_accessor number: String
+
+      attr_accessor package_url: String
+
+      attr_accessor published_at: String?
+
+      attr_accessor purl: String
+
+      attr_accessor registry_url: String?
+
+      attr_accessor status: String?
+
+      attr_accessor updated_at: Time
+
+      attr_accessor version_url: String
+
+      def initialize: (
+        id: Integer,
+        created_at: Time,
+        documentation_url: String?,
+        download_url: String?,
+        install_command: String?,
+        integrity: String?,
+        latest: bool,
+        licenses: String?,
+        metadata: top?,
+        number: String,
+        package_url: String,
+        published_at: String?,
+        purl: String,
+        registry_url: String?,
+        status: String?,
+        updated_at: Time,
+        version_url: String
+      ) -> void
+    end
+
+    type registry_list_recent_versions_response =
+      ::Array[Packages::Models::RegistryListRecentVersionsResponseItem]
+
+    RegistryListRecentVersionsResponse: Packages::Internal::Type::Converter
+  end
+end

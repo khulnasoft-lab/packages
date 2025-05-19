@@ -1,0 +1,73 @@
+module Packages
+  module Models
+    module Registries
+      type package_list_params =
+        {
+          created_after: Time,
+          created_before: Time,
+          critical: bool,
+          order: String,
+          page: Integer,
+          per_page: Integer,
+          sort: String,
+          updated_after: Time,
+          updated_before: Time
+        }
+        & Packages::Internal::Type::request_parameters
+
+      class PackageListParams < Packages::Internal::Type::BaseModel
+        extend Packages::Internal::Type::RequestParameters::Converter
+        include Packages::Internal::Type::RequestParameters
+
+        attr_reader created_after: Time?
+
+        def created_after=: (Time) -> Time
+
+        attr_reader created_before: Time?
+
+        def created_before=: (Time) -> Time
+
+        attr_reader critical: bool?
+
+        def critical=: (bool) -> bool
+
+        attr_reader order: String?
+
+        def order=: (String) -> String
+
+        attr_reader page: Integer?
+
+        def page=: (Integer) -> Integer
+
+        attr_reader per_page: Integer?
+
+        def per_page=: (Integer) -> Integer
+
+        attr_reader sort: String?
+
+        def sort=: (String) -> String
+
+        attr_reader updated_after: Time?
+
+        def updated_after=: (Time) -> Time
+
+        attr_reader updated_before: Time?
+
+        def updated_before=: (Time) -> Time
+
+        def initialize: (
+          ?created_after: Time,
+          ?created_before: Time,
+          ?critical: bool,
+          ?order: String,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?sort: String,
+          ?updated_after: Time,
+          ?updated_before: Time,
+          ?request_options: Packages::request_opts
+        ) -> void
+      end
+    end
+  end
+end

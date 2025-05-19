@@ -1,0 +1,8 @@
+module Packages
+  module Models
+    type registry_lookup_package_response =
+      ::Array[Packages::PackageWithRegistry]
+
+    RegistryLookupPackageResponse: Packages::Internal::Type::Converter
+  end
+end

@@ -1,0 +1,265 @@
+module Packages
+  module Models
+    module Registries
+      type package =
+        {
+          id: Integer,
+          advisories: ::Array[Packages::Registries::Package::Advisory],
+          created_at: Time,
+          critical: bool,
+          dependent_packages_count: Integer,
+          dependent_packages_url: String,
+          dependent_repos_count: Integer,
+          dependent_repositories_url: String,
+          description: String?,
+          docker_dependents_count: Integer,
+          docker_downloads_count: Integer,
+          docker_usage_url: String,
+          documentation_url: String?,
+          downloads: Integer,
+          downloads_period: String?,
+          ecosystem: String,
+          first_release_published_at: Time?,
+          funding_links: ::Array[String],
+          homepage: String?,
+          install_command: String?,
+          keywords_array: ::Array[String],
+          last_synced_at: Time?,
+          latest_release_number: String?,
+          latest_release_published_at: Time?,
+          licenses: String?,
+          maintainers: ::Array[Packages::Registries::Maintainer],
+          metadata: top?,
+          name: String,
+          namespace: String?,
+          normalized_licenses: ::Array[String],
+          purl: String,
+          rankings: top,
+          registry_url: String?,
+          related_packages_url: String,
+          repo_metadata: top?,
+          repo_metadata_updated_at: Time?,
+          repository_url: String?,
+          status: String?,
+          updated_at: Time,
+          usage_url: String,
+          versions_count: Integer,
+          versions_url: String,
+          version_numbers_url: String
+        }
+
+      class Package < Packages::Internal::Type::BaseModel
+        attr_accessor id: Integer
+
+        attr_accessor advisories: ::Array[Packages::Registries::Package::Advisory]
+
+        attr_accessor created_at: Time
+
+        attr_accessor critical: bool
+
+        attr_accessor dependent_packages_count: Integer
+
+        attr_accessor dependent_packages_url: String
+
+        attr_accessor dependent_repos_count: Integer
+
+        attr_accessor dependent_repositories_url: String
+
+        attr_accessor description: String?
+
+        attr_accessor docker_dependents_count: Integer
+
+        attr_accessor docker_downloads_count: Integer
+
+        attr_accessor docker_usage_url: String
+
+        attr_accessor documentation_url: String?
+
+        attr_accessor downloads: Integer
+
+        attr_accessor downloads_period: String?
+
+        attr_accessor ecosystem: String
+
+        attr_accessor first_release_published_at: Time?
+
+        attr_accessor funding_links: ::Array[String]
+
+        attr_accessor homepage: String?
+
+        attr_accessor install_command: String?
+
+        attr_accessor keywords_array: ::Array[String]
+
+        attr_accessor last_synced_at: Time?
+
+        attr_accessor latest_release_number: String?
+
+        attr_accessor latest_release_published_at: Time?
+
+        attr_accessor licenses: String?
+
+        attr_accessor maintainers: ::Array[Packages::Registries::Maintainer]
+
+        attr_accessor metadata: top?
+
+        attr_accessor name: String
+
+        attr_accessor namespace: String?
+
+        attr_accessor normalized_licenses: ::Array[String]
+
+        attr_accessor purl: String
+
+        attr_accessor rankings: top
+
+        attr_accessor registry_url: String?
+
+        attr_accessor related_packages_url: String
+
+        attr_accessor repo_metadata: top?
+
+        attr_accessor repo_metadata_updated_at: Time?
+
+        attr_accessor repository_url: String?
+
+        attr_accessor status: String?
+
+        attr_accessor updated_at: Time
+
+        attr_accessor usage_url: String
+
+        attr_accessor versions_count: Integer
+
+        attr_accessor versions_url: String
+
+        attr_reader version_numbers_url: String?
+
+        def version_numbers_url=: (String) -> String
+
+        def initialize: (
+          id: Integer,
+          advisories: ::Array[Packages::Registries::Package::Advisory],
+          created_at: Time,
+          critical: bool,
+          dependent_packages_count: Integer,
+          dependent_packages_url: String,
+          dependent_repos_count: Integer,
+          dependent_repositories_url: String,
+          description: String?,
+          docker_dependents_count: Integer,
+          docker_downloads_count: Integer,
+          docker_usage_url: String,
+          documentation_url: String?,
+          downloads: Integer,
+          downloads_period: String?,
+          ecosystem: String,
+          first_release_published_at: Time?,
+          funding_links: ::Array[String],
+          homepage: String?,
+          install_command: String?,
+          keywords_array: ::Array[String],
+          last_synced_at: Time?,
+          latest_release_number: String?,
+          latest_release_published_at: Time?,
+          licenses: String?,
+          maintainers: ::Array[Packages::Registries::Maintainer],
+          metadata: top?,
+          name: String,
+          namespace: String?,
+          normalized_licenses: ::Array[String],
+          purl: String,
+          rankings: top,
+          registry_url: String?,
+          related_packages_url: String,
+          repo_metadata: top?,
+          repo_metadata_updated_at: Time?,
+          repository_url: String?,
+          status: String?,
+          updated_at: Time,
+          usage_url: String,
+          versions_count: Integer,
+          versions_url: String,
+          ?version_numbers_url: String
+        ) -> void
+
+        type advisory =
+          {
+            classification: String?,
+            created_at: String,
+            cvss_score: Float?,
+            cvss_vector: String?,
+            description: String?,
+            identifiers: ::Array[String?],
+            origin: String?,
+            packages: ::Array[top],
+            published_at: String?,
+            references: ::Array[String?],
+            severity: String?,
+            source_kind: String?,
+            title: String?,
+            updated_at: String,
+            url: String?,
+            uuid: String,
+            withdrawn_at: String?
+          }
+
+        class Advisory < Packages::Internal::Type::BaseModel
+          attr_accessor classification: String?
+
+          attr_accessor created_at: String
+
+          attr_accessor cvss_score: Float?
+
+          attr_accessor cvss_vector: String?
+
+          attr_accessor description: String?
+
+          attr_accessor identifiers: ::Array[String?]
+
+          attr_accessor origin: String?
+
+          attr_accessor packages: ::Array[top]
+
+          attr_accessor published_at: String?
+
+          attr_accessor references: ::Array[String?]
+
+          attr_accessor severity: String?
+
+          attr_accessor source_kind: String?
+
+          attr_accessor title: String?
+
+          attr_accessor updated_at: String
+
+          attr_accessor url: String?
+
+          attr_accessor uuid: String
+
+          attr_accessor withdrawn_at: String?
+
+          def initialize: (
+            classification: String?,
+            created_at: String,
+            cvss_score: Float?,
+            cvss_vector: String?,
+            description: String?,
+            identifiers: ::Array[String?],
+            origin: String?,
+            packages: ::Array[top],
+            published_at: String?,
+            references: ::Array[String?],
+            severity: String?,
+            source_kind: String?,
+            title: String?,
+            updated_at: String,
+            url: String?,
+            uuid: String,
+            withdrawn_at: String?
+          ) -> void
+        end
+      end
+    end
+  end
+end

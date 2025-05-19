@@ -1,0 +1,22 @@
+module Packages
+  module Models
+    module Registries
+      type namespace =
+        { name: String, packages_count: Integer, packages_url: String }
+
+      class Namespace < Packages::Internal::Type::BaseModel
+        attr_accessor name: String
+
+        attr_accessor packages_count: Integer
+
+        attr_accessor packages_url: String
+
+        def initialize: (
+          name: String,
+          packages_count: Integer,
+          packages_url: String
+        ) -> void
+      end
+    end
+  end
+end

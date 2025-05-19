@@ -1,0 +1,7 @@
+module Packages
+  module Models
+    type keyword_list_response = ::Array[Packages::Keyword]
+
+    KeywordListResponse: Packages::Internal::Type::Converter
+  end
+end

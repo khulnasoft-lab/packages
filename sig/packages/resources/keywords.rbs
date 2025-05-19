@@ -1,0 +1,20 @@
+module Packages
+  module Resources
+    class Keywords
+      def retrieve: (
+        String keyword_name,
+        ?page: Integer,
+        ?per_page: Integer,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::KeywordRetrieveResponse
+
+      def list: (
+        ?page: Integer,
+        ?per_page: Integer,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::keyword_list_response
+
+      def initialize: (client: Packages::Client) -> void
+    end
+  end
+end
