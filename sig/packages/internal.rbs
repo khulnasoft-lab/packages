@@ -2,6 +2,8 @@ module Packages
   module Internal
     extend Packages::Internal::Util::SorbetRuntimeSupport
 
+    type file_input = Pathname | StringIO | IO | String | Packages::FilePart
+
     OMIT: Object
   end
 end

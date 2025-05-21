@@ -25,6 +25,7 @@ class Packages::Test::SorbetRuntimeSupportTest < Minitest::Test
     err = Packages::Internal::Util::SorbetRuntimeSupport::MissingSorbetRuntimeError
 
     assert_raises(err) { Packages::Internal::AnyHash }
+    assert_raises(err) { Packages::Internal::FileInput }
     assert_raises(err) { Packages::Internal::Type::Converter::Input }
     assert_raises(err) { Packages::Internal::Type::Converter::CoerceState }
     assert_raises(err) { Packages::Internal::Type::Converter::DumpState }
