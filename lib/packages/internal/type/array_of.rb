@@ -12,6 +12,7 @@ module Packages
       # Array of items of a given type.
       class ArrayOf
         include Packages::Internal::Type::Converter
+        include Packages::Internal::Util::SorbetRuntimeSupport
 
         private_class_method :new
 
@@ -108,6 +109,13 @@ module Packages
           else
             super
           end
+        end
+
+        # @api private
+        #
+        # @return [Object]
+        def to_sorbet_type
+          T::Array[Packages::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(item_type)]
         end
 
         # @api private

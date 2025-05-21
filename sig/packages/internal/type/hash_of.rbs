@@ -3,6 +3,7 @@ module Packages
     module Type
       class HashOf[Elem]
         include Packages::Internal::Type::Converter
+        include Packages::Internal::Util::SorbetRuntimeSupport
 
         def self.[]: (
           ::Hash[Symbol, top]
@@ -26,6 +27,8 @@ module Packages
           ::Hash[top, top] | top value,
           state: Packages::Internal::Type::Converter::dump_state
         ) -> (::Hash[Symbol, top] | top)
+
+        def to_sorbet_type: -> top
 
         def item_type: -> Elem
 

@@ -10,6 +10,7 @@ module Packages
       # When we don't know what to expect for the value.
       class Unknown
         extend Packages::Internal::Type::Converter
+        extend Packages::Internal::Util::SorbetRuntimeSupport
 
         # rubocop:disable Lint/UnusedMethodArgument
 
@@ -58,6 +59,13 @@ module Packages
           #     @option state [Boolean] :can_retry
           #
           #   @return [Object]
+
+          # @api private
+          #
+          # @return [Object]
+          def to_sorbet_type
+            T.anything
+          end
         end
 
         # rubocop:enable Lint/UnusedMethodArgument

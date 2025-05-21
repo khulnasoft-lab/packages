@@ -12,6 +12,7 @@ module Packages
       # Hash of items of a given type.
       class HashOf
         include Packages::Internal::Type::Converter
+        include Packages::Internal::Util::SorbetRuntimeSupport
 
         private_class_method :new
 
@@ -128,6 +129,13 @@ module Packages
           else
             super
           end
+        end
+
+        # @api private
+        #
+        # @return [Object]
+        def to_sorbet_type
+          T::Hash[Packages::Internal::Util::SorbetRuntimeSupport.to_sorbet_type(item_type)]
         end
 
         # @api private
