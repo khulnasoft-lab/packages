@@ -48,6 +48,16 @@ module Packages
         ?sort: String,
         ?request_options: Packages::request_opts
       ) -> void
+
+      def to_hash: -> {
+        ecosystem: String,
+        name: String,
+        order: String,
+        purl: String,
+        repository_url: String,
+        sort: String,
+        request_options: Packages::RequestOptions
+      }
     end
   end
 end

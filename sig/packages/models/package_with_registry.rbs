@@ -8,6 +8,8 @@ module Packages
       def registry=: (Packages::Registry _) -> Packages::Registry
 
       def initialize: (registry: Packages::Registry) -> void
+
+      def to_hash: -> { registry: Packages::Registry }
     end
   end
 end

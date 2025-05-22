@@ -25,6 +25,13 @@ module Packages
           ?per_page: Integer,
           ?request_options: Packages::request_opts
         ) -> void
+
+        def to_hash: -> {
+          registry_name: String,
+          page: Integer,
+          per_page: Integer,
+          request_options: Packages::RequestOptions
+        }
       end
     end
   end

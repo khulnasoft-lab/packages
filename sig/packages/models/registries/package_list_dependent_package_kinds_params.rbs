@@ -20,6 +20,12 @@ module Packages
           ?latest: bool,
           ?request_options: Packages::request_opts
         ) -> void
+
+        def to_hash: -> {
+          registry_name: String,
+          latest: bool,
+          request_options: Packages::RequestOptions
+        }
       end
     end
   end

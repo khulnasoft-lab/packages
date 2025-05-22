@@ -14,6 +14,11 @@ module Packages
           registry_name: String,
           ?request_options: Packages::request_opts
         ) -> void
+
+        def to_hash: -> {
+          registry_name: String,
+          request_options: Packages::RequestOptions
+        }
       end
     end
   end

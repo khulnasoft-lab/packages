@@ -17,7 +17,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Packages::Registries::Package]
+        # @return [Packages::Models::Registries::Package]
         #
         # @see Packages::Models::Registries::PackageRetrieveParams
         def retrieve(package_name, params)
@@ -60,7 +60,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Array<Packages::Registries::Package>]
+        # @return [Array<Packages::Models::Registries::Package>]
         #
         # @see Packages::Models::Registries::PackageListParams
         def list(registry_name, params = {})
@@ -130,7 +130,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Array<Packages::Registries::Package>]
+        # @return [Array<Packages::Models::Registries::Package>]
         #
         # @see Packages::Models::Registries::PackageListDependentPackagesParams
         def list_dependent_packages(package_name, params)
@@ -170,7 +170,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Array<Packages::Registries::Package>]
+        # @return [Array<Packages::Models::Registries::Package>]
         #
         # @see Packages::Models::Registries::PackageListRelatedPackagesParams
         def list_related_packages(package_name, params)

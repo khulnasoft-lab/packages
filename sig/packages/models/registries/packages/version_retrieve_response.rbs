@@ -83,6 +83,27 @@ module Packages
             version_url: String,
             ?id: Integer
           ) -> void
+
+          def to_hash: -> {
+            created_at: Time,
+            dependencies: ::Array[Packages::Dependency],
+            documentation_url: String?,
+            download_url: String?,
+            install_command: String?,
+            integrity: String?,
+            latest: bool,
+            licenses: String?,
+            metadata: top?,
+            number: String,
+            published_at: String?,
+            purl: String,
+            registry_url: String?,
+            related_tag: top,
+            status: String?,
+            updated_at: Time,
+            version_url: String,
+            id: Integer
+          }
         end
       end
     end

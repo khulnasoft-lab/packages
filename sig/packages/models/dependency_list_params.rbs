@@ -66,6 +66,19 @@ module Packages
         ?requirements: String,
         ?request_options: Packages::request_opts
       ) -> void
+
+      def to_hash: -> {
+        after: String,
+        ecosystem: String,
+        kind: String,
+        optional: bool,
+        package_id: String,
+        package_name: String,
+        page: Integer,
+        per_page: Integer,
+        requirements: String,
+        request_options: Packages::RequestOptions
+      }
     end
   end
 end

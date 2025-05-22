@@ -15,6 +15,12 @@ module Packages
         packages_count: Integer,
         packages_url: String
       ) -> void
+
+      def to_hash: -> {
+        name: String,
+        packages_count: Integer,
+        packages_url: String
+      }
     end
   end
 end

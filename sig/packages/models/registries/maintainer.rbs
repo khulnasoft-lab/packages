@@ -56,6 +56,21 @@ module Packages
           url: String?,
           uuid: String
         ) -> void
+
+        def to_hash: -> {
+          created_at: Time,
+          email: String?,
+          html_url: String?,
+          login: String?,
+          name: String?,
+          packages_count: Integer,
+          packages_url: String,
+          role: String?,
+          total_downloads: Integer,
+          updated_at: Time,
+          url: String?,
+          uuid: String
+        }
       end
     end
   end

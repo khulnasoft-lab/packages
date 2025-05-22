@@ -31,6 +31,15 @@ module Packages
         package_name: String,
         requirements: String?
       ) -> void
+
+      def to_hash: -> {
+        id: Integer,
+        ecosystem: String,
+        kind: String?,
+        optional: bool?,
+        package_name: String,
+        requirements: String?
+      }
     end
   end
 end

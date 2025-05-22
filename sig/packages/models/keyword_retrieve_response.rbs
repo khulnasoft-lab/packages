@@ -27,6 +27,14 @@ module Packages
         packages_url: String,
         related_keywords: ::Array[Packages::Keyword]
       ) -> void
+
+      def to_hash: -> {
+        name: String,
+        packages: ::Array[Packages::Registries::Package],
+        packages_count: Integer,
+        packages_url: String,
+        related_keywords: ::Array[Packages::Keyword]
+      }
     end
   end
 end

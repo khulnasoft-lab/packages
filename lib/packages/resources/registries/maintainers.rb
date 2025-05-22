@@ -14,7 +14,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Packages::Registries::Maintainer]
+        # @return [Packages::Models::Registries::Maintainer]
         #
         # @see Packages::Models::Registries::MaintainerRetrieveParams
         def retrieve(maintainer_login_or_uuid, params)
@@ -51,7 +51,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Array<Packages::Registries::Maintainer>]
+        # @return [Array<Packages::Models::Registries::Maintainer>]
         #
         # @see Packages::Models::Registries::MaintainerListParams
         def list(registry_name, params = {})
@@ -79,7 +79,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Array<Packages::Registries::Package>]
+        # @return [Array<Packages::Models::Registries::Package>]
         #
         # @see Packages::Models::Registries::MaintainerListPackagesParams
         def list_packages(maintainer_login_or_uuid, params)

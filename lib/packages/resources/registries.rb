@@ -24,7 +24,7 @@ module Packages
       #
       # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [Packages::Registry]
+      # @return [Packages::Models::Registry]
       #
       # @see Packages::Models::RegistryRetrieveParams
       def retrieve(registry_name, params = {})
@@ -48,7 +48,7 @@ module Packages
       #
       # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [Array<Packages::Registry>]
+      # @return [Array<Packages::Models::Registry>]
       #
       # @see Packages::Models::RegistryListParams
       def list(params = {})
@@ -162,7 +162,7 @@ module Packages
       #
       # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [Array<Packages::PackageWithRegistry>]
+      # @return [Array<Packages::Models::PackageWithRegistry>]
       #
       # @see Packages::Models::RegistryLookupPackageParams
       def lookup_package(registry_name, params = {})

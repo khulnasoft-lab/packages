@@ -21,6 +21,12 @@ module Packages
         ?per_page: Integer,
         ?request_options: Packages::request_opts
       ) -> void
+
+      def to_hash: -> {
+        page: Integer,
+        per_page: Integer,
+        request_options: Packages::RequestOptions
+      }
     end
   end
 end

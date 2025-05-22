@@ -13,7 +13,7 @@ module Packages
 
           # @!attribute dependencies
           #
-          #   @return [Array<Packages::Dependency>]
+          #   @return [Array<Packages::Models::Dependency>]
           required :dependencies, -> { Packages::Internal::Type::ArrayOf[Packages::Dependency] }
 
           # @!attribute documentation_url
@@ -98,7 +98,7 @@ module Packages
 
           # @!method initialize(created_at:, dependencies:, documentation_url:, download_url:, install_command:, integrity:, latest:, licenses:, metadata:, number:, published_at:, purl:, registry_url:, related_tag:, status:, updated_at:, version_url:, id: nil)
           #   @param created_at [Time]
-          #   @param dependencies [Array<Packages::Dependency>]
+          #   @param dependencies [Array<Packages::Models::Dependency>]
           #   @param documentation_url [String, nil]
           #   @param download_url [String, nil]
           #   @param install_command [String, nil]

@@ -49,6 +49,16 @@ module Packages
           ?updated_after: Time,
           ?request_options: Packages::request_opts
         ) -> void
+
+        def to_hash: -> {
+          created_after: Time,
+          order: String,
+          page: Integer,
+          per_page: Integer,
+          sort: String,
+          updated_after: Time,
+          request_options: Packages::RequestOptions
+        }
       end
     end
   end

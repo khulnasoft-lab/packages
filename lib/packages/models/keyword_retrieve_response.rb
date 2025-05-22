@@ -11,7 +11,7 @@ module Packages
 
       # @!attribute packages
       #
-      #   @return [Array<Packages::Registries::Package>]
+      #   @return [Array<Packages::Models::Registries::Package>]
       required :packages, -> { Packages::Internal::Type::ArrayOf[Packages::Registries::Package] }
 
       # @!attribute packages_count
@@ -26,15 +26,15 @@ module Packages
 
       # @!attribute related_keywords
       #
-      #   @return [Array<Packages::Keyword>]
+      #   @return [Array<Packages::Models::Keyword>]
       required :related_keywords, -> { Packages::Internal::Type::ArrayOf[Packages::Keyword] }
 
       # @!method initialize(name:, packages:, packages_count:, packages_url:, related_keywords:)
       #   @param name [String]
-      #   @param packages [Array<Packages::Registries::Package>]
+      #   @param packages [Array<Packages::Models::Registries::Package>]
       #   @param packages_count [Integer]
       #   @param packages_url [String]
-      #   @param related_keywords [Array<Packages::Keyword>]
+      #   @param related_keywords [Array<Packages::Models::Keyword>]
     end
   end
 end

@@ -81,6 +81,27 @@ module Packages
         url: String,
         ?versions_count: Integer
       ) -> void
+
+      def to_hash: -> {
+        created_at: Time,
+        default: bool,
+        downloads: Integer,
+        ecosystem: String,
+        github: String?,
+        icon_url: String,
+        keywords_count: Integer,
+        maintainers_count: Integer,
+        maintainers_url: String,
+        metadata: top?,
+        name: String,
+        namespaces_count: Integer,
+        packages_count: Integer,
+        packages_url: String,
+        purl_type: String,
+        updated_at: Time,
+        url: String,
+        versions_count: Integer
+      }
     end
   end
 end

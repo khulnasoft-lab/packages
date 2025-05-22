@@ -39,7 +39,7 @@ module Packages
       #
       # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [Array<Packages::Keyword>]
+      # @return [Array<Packages::Models::Keyword>]
       #
       # @see Packages::Models::KeywordListParams
       def list(params = {})

@@ -21,7 +21,7 @@ module Packages
       #
       # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [Array<Packages::PackageWithRegistry>]
+      # @return [Array<Packages::Models::PackageWithRegistry>]
       #
       # @see Packages::Models::PackageLookupParams
       def lookup(params = {})

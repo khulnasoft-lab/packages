@@ -12,7 +12,7 @@ module Packages
 
         # @!attribute advisories
         #
-        #   @return [Array<Packages::Registries::Package::Advisory>]
+        #   @return [Array<Packages::Models::Registries::Package::Advisory>]
         required :advisories,
                  -> {
                    Packages::Internal::Type::ArrayOf[Packages::Registries::Package::Advisory]
@@ -135,7 +135,7 @@ module Packages
 
         # @!attribute maintainers
         #
-        #   @return [Array<Packages::Registries::Maintainer>]
+        #   @return [Array<Packages::Models::Registries::Maintainer>]
         required :maintainers, -> { Packages::Internal::Type::ArrayOf[Packages::Registries::Maintainer] }
 
         # @!attribute metadata
@@ -225,7 +225,7 @@ module Packages
 
         # @!method initialize(id:, advisories:, created_at:, critical:, dependent_packages_count:, dependent_packages_url:, dependent_repos_count:, dependent_repositories_url:, description:, docker_dependents_count:, docker_downloads_count:, docker_usage_url:, documentation_url:, downloads:, downloads_period:, ecosystem:, first_release_published_at:, funding_links:, homepage:, install_command:, keywords_array:, last_synced_at:, latest_release_number:, latest_release_published_at:, licenses:, maintainers:, metadata:, name:, namespace:, normalized_licenses:, purl:, rankings:, registry_url:, related_packages_url:, repo_metadata:, repo_metadata_updated_at:, repository_url:, status:, updated_at:, usage_url:, versions_count:, versions_url:, version_numbers_url: nil)
         #   @param id [Integer]
-        #   @param advisories [Array<Packages::Registries::Package::Advisory>]
+        #   @param advisories [Array<Packages::Models::Registries::Package::Advisory>]
         #   @param created_at [Time]
         #   @param critical [Boolean]
         #   @param dependent_packages_count [Integer]
@@ -249,7 +249,7 @@ module Packages
         #   @param latest_release_number [String, nil]
         #   @param latest_release_published_at [Time, nil]
         #   @param licenses [String, nil]
-        #   @param maintainers [Array<Packages::Registries::Maintainer>]
+        #   @param maintainers [Array<Packages::Models::Registries::Maintainer>]
         #   @param metadata [Object, nil]
         #   @param name [String]
         #   @param namespace [String, nil]

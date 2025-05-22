@@ -27,7 +27,7 @@ module Packages
       #
       # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
       #
-      # @return [Array<Packages::Dependency>]
+      # @return [Array<Packages::Models::Dependency>]
       #
       # @see Packages::Models::DependencyListParams
       def list(params = {})

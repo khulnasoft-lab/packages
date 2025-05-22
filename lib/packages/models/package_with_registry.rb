@@ -5,11 +5,11 @@ module Packages
     class PackageWithRegistry < Packages::Models::Registries::Package
       # @!attribute registry
       #
-      #   @return [Packages::Registry]
+      #   @return [Packages::Models::Registry]
       required :registry, -> { Packages::Registry }
 
       # @!method initialize(registry:)
-      #   @param registry [Packages::Registry]
+      #   @param registry [Packages::Models::Registry]
     end
   end
 end

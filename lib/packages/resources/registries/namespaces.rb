@@ -14,7 +14,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Packages::Registries::Namespace]
+        # @return [Packages::Models::Registries::Namespace]
         #
         # @see Packages::Models::Registries::NamespaceRetrieveParams
         def retrieve(namespace_name, params)
@@ -43,7 +43,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Array<Packages::Registries::Namespace>]
+        # @return [Array<Packages::Models::Registries::Namespace>]
         #
         # @see Packages::Models::Registries::NamespaceListParams
         def list(registry_name, params = {})
@@ -71,7 +71,7 @@ module Packages
         #
         # @param request_options [Packages::RequestOptions, Hash{Symbol=>Object}, nil]
         #
-        # @return [Array<Packages::Registries::Package>]
+        # @return [Array<Packages::Models::Registries::Package>]
         #
         # @see Packages::Models::Registries::NamespaceListPackagesParams
         def list_packages(namespace_name, params)
