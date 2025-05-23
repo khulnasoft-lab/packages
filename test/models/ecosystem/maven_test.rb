@@ -70,7 +70,7 @@ class MavenTest < ActiveSupport::TestCase
   end
 
   test 'recently_updated_package_names' do
-    # Stub the HTTP request to the Sonatype API
+    # Stub the HTTP request to the Sonatype Central API (migrated from maven.libraries.io)
     stub_request(:post, "https://central.sonatype.com/api/internal/browse/components?repository=maven-central")
       .with(
         body: { size: 20, sortField: "publishedDate", sortDirection: "desc" }.to_json,
