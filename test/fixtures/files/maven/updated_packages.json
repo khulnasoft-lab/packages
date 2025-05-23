@@ -1,0 +1,6 @@
+{
+    "packages": [
+        { "name": "package1", "updated_at": "2025-05-22T10:00:00Z" },
+        { "name": "package2", "updated_at": "2025-05-21T12:30:00Z" }
+    ]
+}

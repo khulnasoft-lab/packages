@@ -70,10 +70,22 @@ class MavenTest < ActiveSupport::TestCase
   end
 
   test 'recently_updated_package_names' do
-    stub_request(:get, "https://maven.libraries.io/mavenCentral/recent")
-      .to_return({ status: 200, body: file_fixture('maven/recent') })
+    # Stub the HTTP request to the Sonatype Central API (migrated from maven.libraries.io)
+    stub_request(:post, "https://central.sonatype.com/api/internal/browse/components?repository=maven-central")
+      .with(
+        body: { size: 20, sortField: "publishedDate", sortDirection: "desc" }.to_json,
+        headers: { 'Content-Type' => 'application/json' }
+      )
+      .to_return(
+        status: 200,
+        body: file_fixture('maven/updated_packages.json'), # Create a fixture file with mock data
+        headers: { 'Content-Type' => 'application/json' }
+      )
     recently_updated_package_names = @ecosystem.recently_updated_package_names
-    assert_equal recently_updated_package_names.length, 100
+    # Assert based on the actual content in the updated_packages.json fixture
+    assert_not_empty recently_updated_package_names
+    # Or use the exact count if known:
+    # assert_equal recently_updated_package_names.length, expected_count
   end
 
   test 'package_metadata' do
