@@ -1,46 +1,42 @@
 name: CI
-
-on: [push]
+on:
+  push:
+    branches-ignore:
+      - 'generated'
+      - 'codegen/**'
+      - 'integrated/**'
+      - 'stl-preview-head/**'
+      - 'stl-preview-base/**'
 
 jobs:
-  verify:
-    name: Build
-    runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres:14
-        env:
-          POSTGRES_USER: packages
-          POSTGRES_DB: packages_test
-          POSTGRES_PASSWORD: postgres
-        ports: ["5432:5432"]
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-      redis:
-        image: redis
-        ports:
-        - 6379:6379
-        options: --entrypoint redis-server
+  lint:
+    timeout-minutes: 10
+    name: lint
+    runs-on: ${{ github.repository == 'stainless-sdks/packages-ruby' && 'depot-ubuntu-24.04' || 'ubuntu-latest' }}
 
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependent libraries
-        run: sudo apt-get install libpq-dev
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          bundler-cache: true
+          bundler-cache: false
+      - run: |-
+          bundle install
+
+      - name: Run lints
+        run: ./scripts/lint
+  test:
+    timeout-minutes: 10
+    name: test
+    runs-on: ${{ github.repository == 'stainless-sdks/packages-ruby' && 'depot-ubuntu-24.04' || 'ubuntu-latest' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: false
+      - run: |-
+          bundle install
 
       - name: Run tests
-        env:
-          RAILS_ENV: test
-          POSTGRES_DB: packages_test
-          POSTGRES_USER: packages
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_HOST: localhost
-          POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
-        run: bundle exec rake db:schema:load test
+        run: ./scripts/test

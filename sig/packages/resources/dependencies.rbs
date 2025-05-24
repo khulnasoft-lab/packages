@@ -1,0 +1,20 @@
+module Packages
+  module Resources
+    class Dependencies
+      def list: (
+        ?after: String,
+        ?ecosystem: String,
+        ?kind: String,
+        ?optional: bool,
+        ?package_id: String,
+        ?package_name: String,
+        ?page: Integer,
+        ?per_page: Integer,
+        ?requirements: String,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::dependency_list_response
+
+      def initialize: (client: Packages::Client) -> void
+    end
+  end
+end

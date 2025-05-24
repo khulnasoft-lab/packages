@@ -1,0 +1,56 @@
+module Packages
+  module Internal
+    module Type
+      module Converter
+        extend Packages::Internal::Util::SorbetRuntimeSupport
+
+        type input = Packages::Internal::Type::Converter | Class
+
+        type coerce_state =
+          {
+            strictness: bool | :strong,
+            exactness: { yes: Integer, no: Integer, maybe: Integer },
+            branched: Integer
+          }
+
+        type dump_state = { can_retry: bool }
+
+        def coerce: (
+          top value,
+          state: Packages::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def dump: (
+          top value,
+          state: Packages::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def inspect: (?depth: Integer) -> String
+
+        def self.type_info: (
+          {
+            const: (nil | bool | Integer | Float | Symbol)?,
+            enum: ^-> Packages::Internal::Type::Converter::input?,
+            union: ^-> Packages::Internal::Type::Converter::input?
+          }
+          | ^-> Packages::Internal::Type::Converter::input
+          | Packages::Internal::Type::Converter::input spec
+        ) -> (^-> top)
+
+        def self.coerce: (
+          Packages::Internal::Type::Converter::input target,
+          top value,
+          ?state: Packages::Internal::Type::Converter::coerce_state
+        ) -> top
+
+        def self.dump: (
+          Packages::Internal::Type::Converter::input target,
+          top value,
+          ?state: Packages::Internal::Type::Converter::dump_state
+        ) -> top
+
+        def self.inspect: (top target, depth: Integer) -> String
+      end
+    end
+  end
+end

@@ -1,1 +1,0 @@
-sitemap: https://packages.ecosyste.ms/sitemap/sitemap.xml.gz

@@ -1,1 +1,0 @@
-json.array! @maintainers, partial: 'api/v1/maintainers/maintainer', as: :maintainer

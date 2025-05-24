@@ -1,0 +1,29 @@
+module Packages
+  class Dependency = Packages::Models::Dependency
+
+  class DependencyListParams = Packages::Models::DependencyListParams
+
+  class Keyword = Packages::Models::Keyword
+
+  class KeywordListParams = Packages::Models::KeywordListParams
+
+  class KeywordRetrieveParams = Packages::Models::KeywordRetrieveParams
+
+  class PackageLookupParams = Packages::Models::PackageLookupParams
+
+  class PackageWithRegistry = Packages::Models::PackageWithRegistry
+
+  module Registries = Packages::Models::Registries
+
+  class Registry = Packages::Models::Registry
+
+  class RegistryListPackageNamesParams = Packages::Models::RegistryListPackageNamesParams
+
+  class RegistryListParams = Packages::Models::RegistryListParams
+
+  class RegistryListRecentVersionsParams = Packages::Models::RegistryListRecentVersionsParams
+
+  class RegistryLookupPackageParams = Packages::Models::RegistryLookupPackageParams
+
+  class RegistryRetrieveParams = Packages::Models::RegistryRetrieveParams
+end

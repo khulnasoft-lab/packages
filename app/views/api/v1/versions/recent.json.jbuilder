@@ -1,1 +1,0 @@
-json.array! @versions, partial: 'api/v1/versions/version_with_package', as: :version

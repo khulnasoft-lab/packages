@@ -1,0 +1,9 @@
+module Packages
+  module Models
+    module Registries
+      type maintainer_list_response = ::Array[Packages::Registries::Maintainer]
+
+      MaintainerListResponse: Packages::Internal::Type::Converter
+    end
+  end
+end

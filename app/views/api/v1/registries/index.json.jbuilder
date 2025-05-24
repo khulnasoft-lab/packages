@@ -1,1 +1,0 @@
-json.array! @registries, partial: 'api/v1/registries/registry', as: :registry

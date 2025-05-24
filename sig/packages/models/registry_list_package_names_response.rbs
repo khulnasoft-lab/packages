@@ -1,0 +1,7 @@
+module Packages
+  module Models
+    type registry_list_package_names_response = ::Array[String]
+
+    RegistryListPackageNamesResponse: Packages::Internal::Type::Converter
+  end
+end

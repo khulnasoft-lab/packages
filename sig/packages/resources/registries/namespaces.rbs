@@ -1,0 +1,30 @@
+module Packages
+  module Resources
+    class Registries
+      class Namespaces
+        def retrieve: (
+          String namespace_name,
+          registry_name: String,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Registries::Namespace
+
+        def list: (
+          String registry_name,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::namespace_list_response
+
+        def list_packages: (
+          String namespace_name,
+          registry_name: String,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::namespace_list_packages_response
+
+        def initialize: (client: Packages::Client) -> void
+      end
+    end
+  end
+end

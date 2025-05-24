@@ -1,1 +1,0 @@
-json.array! @keywords, partial: 'api/v1/keywords/keyword', as: :keyword

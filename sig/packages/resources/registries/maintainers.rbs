@@ -1,0 +1,34 @@
+module Packages
+  module Resources
+    class Registries
+      class Maintainers
+        def retrieve: (
+          String maintainer_login_or_uuid,
+          registry_name: String,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Registries::Maintainer
+
+        def list: (
+          String registry_name,
+          ?created_after: Time,
+          ?order: String,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?sort: String,
+          ?updated_after: Time,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::maintainer_list_response
+
+        def list_packages: (
+          String maintainer_login_or_uuid,
+          registry_name: String,
+          ?page: Integer,
+          ?per_page: Integer,
+          ?request_options: Packages::request_opts
+        ) -> Packages::Models::Registries::maintainer_list_packages_response
+
+        def initialize: (client: Packages::Client) -> void
+      end
+    end
+  end
+end

@@ -1,0 +1,7 @@
+module Packages
+  module Models
+    type dependency_list_response = ::Array[Packages::Dependency]
+
+    DependencyListResponse: Packages::Internal::Type::Converter
+  end
+end

@@ -1,0 +1,65 @@
+module Packages
+  module Resources
+    class Registries
+      attr_reader maintainers: Packages::Resources::Registries::Maintainers
+
+      attr_reader namespaces: Packages::Resources::Registries::Namespaces
+
+      attr_reader packages: Packages::Resources::Registries::Packages
+
+      def retrieve: (
+        String registry_name,
+        ?page: Integer,
+        ?per_page: Integer,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Registry
+
+      def list: (
+        ?page: Integer,
+        ?per_page: Integer,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::registry_list_response
+
+      def list_package_names: (
+        String registry_name,
+        ?created_after: Time,
+        ?created_before: Time,
+        ?order: String,
+        ?page: Integer,
+        ?per_page: Integer,
+        ?sort: String,
+        ?updated_after: Time,
+        ?updated_before: Time,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::registry_list_package_names_response
+
+      def list_recent_versions: (
+        String registry_name,
+        ?created_after: Time,
+        ?created_before: Time,
+        ?order: String,
+        ?page: Integer,
+        ?per_page: Integer,
+        ?published_after: Time,
+        ?published_before: Time,
+        ?sort: String,
+        ?updated_after: Time,
+        ?updated_before: Time,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::registry_list_recent_versions_response
+
+      def lookup_package: (
+        String registry_name,
+        ?ecosystem: String,
+        ?name: String,
+        ?order: String,
+        ?purl: String,
+        ?repository_url: String,
+        ?sort: String,
+        ?request_options: Packages::request_opts
+      ) -> Packages::Models::registry_lookup_package_response
+
+      def initialize: (client: Packages::Client) -> void
+    end
+  end
+end

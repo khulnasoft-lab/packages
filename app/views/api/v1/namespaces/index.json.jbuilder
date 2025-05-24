@@ -1,1 +1,0 @@
-json.array! @namespaces, partial: 'api/v1/namespaces/namespace', as: :namespace

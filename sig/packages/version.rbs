@@ -1,0 +1,3 @@
+module Packages
+  VERSION: String
+end

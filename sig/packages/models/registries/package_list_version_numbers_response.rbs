@@ -1,0 +1,9 @@
+module Packages
+  module Models
+    module Registries
+      type package_list_version_numbers_response = ::Array[String]
+
+      PackageListVersionNumbersResponse: Packages::Internal::Type::Converter
+    end
+  end
+end
